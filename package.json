@@ -1,7 +1,7 @@
 {
   "name": "meal",
-  "version": "1.0.0",
-  "description": "Creates scss, html (or php), and js files via command line. It also adds imports where needed.",
+  "version": "1.0.1",
+  "description": "Creates scss, html, and js files via command line from set templates.",
   "scripts": {
     "test": "meal"
   },
@@ -18,6 +18,8 @@
   "author": "Vincent Smuda",
   "license": "ISC",
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "fs": "0.0.2",
+    "mkdirp": "^0.5.1"
   }
 }
