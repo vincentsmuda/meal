@@ -1,0 +1,23 @@
+{
+  "name": "meal",
+  "version": "1.0.0",
+  "description": "Creates scss, html (or php), and js files via command line. It also adds imports where needed.",
+  "scripts": {
+    "test": "meal"
+  },
+  "bin": {
+    "meal": "./meal.js"
+  },
+  "keywords": [
+    "front-end",
+    "html",
+    "css",
+    "scss",
+    "javascript"
+  ],
+  "author": "Vincent Smuda",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}
