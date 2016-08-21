@@ -4,7 +4,8 @@ var meal = require('commander'),
 	fs = require('fs'),
 	path = require('path'),
 	mkdirp = require('mkdirp'),
-	app_dir = path.dirname(require.main.filename),
+	mod_dir = path.dirname(require.main.filename),
+	app_dir = './',
 	user_options = {
 
 		// TODO: check to see if user has a meal.json file in their root dir
@@ -32,7 +33,7 @@ var meal = require('commander'),
 
 		// TODO: check to see if the user has a folder called meal_components
 		// if they do, use that folder, else use the default folder
-		components_dir: './components',
+		components_dir: mod_dir + '/components',
 
 		// TODO: allow the user to specify their own master scss file
 		scss_file: 'style.scss'
@@ -41,7 +42,6 @@ var meal = require('commander'),
 	components = fs.readdirSync(user_options.components_dir).filter(v => v[0] !== '.'),
 	interpret = function (args) {
 		var options = args.add;
-
 		if(options) {
 			switch (options.length) {
 				case 0:
@@ -62,13 +62,23 @@ var meal = require('commander'),
 					createFiles(args);
 					break;
 				}else if(i + 1 == l) {
-					console.error('\n  That component does not exist.\n');
+					console.error('\n  That component does not exist.');
+					listComponents();
 					return;
 				}
 			};
+		} else if(args.list) {
+			listComponents();
 		} else {
 			args.outputHelp();
 		}
+	},
+	listComponents = function() {
+		var list = '\n  Usable components include:';
+			for (var i = 0, l = components.length; i < l; i++) {
+				list += '\n  - ' + components[i];
+			};
+			console.log(list + '\n')
 	},
 	createFiles = function(args) {
 
@@ -87,11 +97,11 @@ var meal = require('commander'),
 
 	},
 	createFile = function(type, options) {
-		fs.readFile('./components/' + options[1] + '/' + type.name + '.' + type.type, 'utf8', function (err,data) {
+		fs.readFile(user_options.components_dir + '/' + options[1] + '/' + type.name + '.' + type.type, 'utf8', function (err,data) {
 			if (err) return console.error(err);
 			var contents = data.replace(/COMPONENT/g, options[0]),
 				filename = type.prefix + options[1] + '-' + options[0] + '.' + type.type,
-				dirs = type.path ? type.path : '/resources/' + type.name + '/' + type.type + '/components/';
+				dirs = type.path ? type.path : 'resources/' + type.name + '/' + type.type + '/components/';
 			createDirs(app_dir + dirs, function(dir){
 				var filepath = dir + filename;
 				fs.stat(filepath, function(err, stat) {
@@ -113,28 +123,29 @@ var meal = require('commander'),
 		});
 	},
 	importScss = function(type, options) {
-		var style_folder = type.path ? type.path + '../' : '/resources/' + type.name + '/' + type.type + '/',
+		var style_folder = type.path ? type.path + '../' : 'resources/' + type.name + '/' + type.type + '/',
 			style_folder_array = style_folder.split('/'),
 			style_path = app_dir + style_folder + user_options.scss_file,
 			import_name = type.prefix + options[1] + '-' + options[0] + '.' + type.type,
-			import_string = '\n@import \'./' + style_folder_array[style_folder_array.length-2] + '/' + import_name + '\';\n\n';
+			import_string = '\n\t@import \"components/' + options[1] + '-' + options[0] + '\";\n\n';
 		fs.stat(style_path, (err, stat) => {
 			if(err === null) {
 		    	fs.readFile(style_path, 'utf8', (err,data) => {
 		    		fs.writeFile(style_path, '\n' + data.trim() + import_string);
 		    	});
 		    }else if(err.code == 'ENOENT') {
-		    	fs.writeFile(style_path, '\n/*\n *\n *\tMEAL IMPORTS (LEAVE AT BOTTOM)\n *\n */' + import_string);
+		    	fs.writeFile(style_path, '\n/*\n *\n *\tMEAL IMPORTS (LEAVE AT BOTTOM)\n *\n */\n' + import_string);
 		    }
 		});
 	};
 
 meal
   .version('0.0.1')
+  .option('--list', 'List usable components')
   .option('-a --add [component_name] [component_type]', 'Add a new component')
   .option('-xj --xjs', 'Without javascript file')
   .option('-xs --xscss', 'Without scss file')
-  .option('-xm --xhtml', 'Without markup file')
+  .option('-xh --xhtml', 'Without markup file')
   .parse(process.argv);
 
 interpret(meal);
