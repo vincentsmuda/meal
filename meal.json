@@ -1,0 +1,24 @@
+{
+	"file_types": [
+		{
+			"type": "html",
+			"name": "markup",
+			"path": "/resources/markup/html/components",
+			"prefix": ""
+		},
+		{
+			"type": "scss",
+			"name": "styles",
+			"path": "/resources/styles/scss/components",
+			"prefix": "_"
+		},
+		{
+			"type": "js",
+			"name": "scripts",
+			"path": "/resources/scripts/js/components",
+			"prefix": "_"
+		}
+	],
+	"components_dir": "/components",
+	"scss_file": "style.scss"
+}

@@ -1,45 +1,41 @@
 #!/usr/bin/env node
 
+// TODO: check to see if user has a meal.json file in their root dir
+// if they do, use their settings including the below filetypes
+// TODO: check to see if the user has a folder called meal_components
+// if they do, use that folder, else use the default folder
+// TODO: allow the user to specify their own master scss file
+
 var meal = require('commander'),
 	fs = require('fs'),
 	path = require('path'),
 	mkdirp = require('mkdirp'),
 	mod_dir = path.dirname(require.main.filename),
 	app_dir = './',
-	user_options = {
-
-		// TODO: check to see if user has a meal.json file in their root dir
-		// if they do, use their settings including the below filetypes
-		file_types: [
-			{
-				type: 'html',
-				name: 'markup',
-				// path: '/path/to/generated/file/',
-				prefix: ''
-			},
-			{
-				type: 'scss',
-				name: 'styles',
-				// path: '/path/to/generated/file/',
-				prefix: '_'
-			},
-			{
-				type: 'js',
-				name: 'scripts',
-				// path: '/path/to/generated/file/',
-				prefix: '_'
-			}
-		],
-
-		// TODO: check to see if the user has a folder called meal_components
-		// if they do, use that folder, else use the default folder
-		components_dir: mod_dir + '/components',
-
-		// TODO: allow the user to specify their own master scss file
-		scss_file: 'style.scss'
-
+	user_options = {},
+	components = '',
+	
+	init = function(args) {
+		fs.stat(app_dir + 'meal.json', function(cerr, cstat) {
+			var has_config = cerr === null;
+		    fs.readFile(mod_dir + '/meal.json', 'utf8', function (derr,ddata) {
+		    	duser_options = JSON.parse(ddata);
+		    	duser_options.components_dir = mod_dir + duser_options.components_dir;
+		    	components = fs.readdirSync(duser_options.components_dir).filter(v => v[0] !== '.');
+		    	if(has_config)
+				    fs.readFile(app_dir + '/meal.json', 'utf8', function (err,data) {
+				    	Object.assign(user_options, duser_options, JSON.parse(data));
+				    	components = fs.readdirSync(user_options.components_dir).filter(v => v[0] !== '.');
+				    	interpret(args);
+				    });
+				else{
+					user_options = duser_options;
+					interpret(args);
+				}
+			});
+		});
 	},
-	components = fs.readdirSync(user_options.components_dir).filter(v => v[0] !== '.'),
+	
 	interpret = function (args) {
 		var options = args.add;
 		if(options) {
@@ -73,6 +69,7 @@ var meal = require('commander'),
 			args.outputHelp();
 		}
 	},
+
 	listComponents = function() {
 		var list = '\n  Usable components include:';
 			for (var i = 0, l = components.length; i < l; i++) {
@@ -80,6 +77,7 @@ var meal = require('commander'),
 			};
 			console.log(list + '\n')
 	},
+	
 	createFiles = function(args) {
 
 		var options = args.add,
@@ -96,18 +94,17 @@ var meal = require('commander'),
 		console.log('\n  You created a new ' + options[0] + ' ' + options[1] + ' component\n');
 
 	},
+
 	createFile = function(type, options) {
 		fs.readFile(user_options.components_dir + '/' + options[1] + '/' + type.name + '.' + type.type, 'utf8', function (err,data) {
 			if (err) return console.error(err);
 			var contents = data.replace(/COMPONENT/g, options[0]),
 				filename = type.prefix + options[1] + '-' + options[0] + '.' + type.type,
-				dirs = type.path ? type.path : 'resources/' + type.name + '/' + type.type + '/components/';
+				dirs = type.path ? type.path.replace(/^\//g, '') : 'resources/' + type.name + '/' + type.type + '/components/';
 			createDirs(app_dir + dirs, function(dir){
 				var filepath = dir + filename;
 				fs.stat(filepath, function(err, stat) {
-				    if(err === null) {
-				    	// do nothing
-				    }else if(err.code == 'ENOENT') {
+				    if(err.code == 'ENOENT') {
 				        fs.writeFile(filepath, contents);
 				    } else {
 				        console.log('Some other error: ', err.code);
@@ -117,11 +114,13 @@ var meal = require('commander'),
 			});
 		});
 	},
+
 	createDirs = function(dirs,cb) { 
 		mkdirp(dirs, function(err) { 
 		    cb(dirs);
 		});
 	},
+
 	importScss = function(type, options) {
 		var style_folder = type.path ? type.path + '../' : 'resources/' + type.name + '/' + type.type + '/',
 			style_folder_array = style_folder.split('/'),
@@ -148,4 +147,4 @@ meal
   .option('-xh --xhtml', 'Without markup file')
   .parse(process.argv);
 
-interpret(meal);
+init(meal);
