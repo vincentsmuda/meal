@@ -100,11 +100,13 @@ var meal = require('commander'),
 			if (err) return console.error(err);
 			var contents = data.replace(/COMPONENT/g, options[0]),
 				filename = type.prefix + options[1] + '-' + options[0] + '.' + type.type,
-				dirs = type.path ? type.path.replace(/^\//g, '') : 'resources/' + type.name + '/' + type.type + '/components/';
+				dirs = type.path ? type.path.replace(/^\//g, '') : 'resources/' + type.name + '/' + type.type + '/components';
 			createDirs(app_dir + dirs, function(dir){
-				var filepath = dir + filename;
+				var filepath = dir + '/' + filename;
 				fs.stat(filepath, function(err, stat) {
-				    if(err.code == 'ENOENT') {
+					if(err === null) {
+
+				    }else if(err.code == 'ENOENT') {
 				        fs.writeFile(filepath, contents);
 				    } else {
 				        console.log('Some other error: ', err.code);
@@ -122,7 +124,7 @@ var meal = require('commander'),
 	},
 
 	importScss = function(type, options) {
-		var style_folder = type.path ? type.path + '../' : 'resources/' + type.name + '/' + type.type + '/',
+		var style_folder = type.path ? type.path.replace(/^\//g, '') + '/../' : 'resources/' + type.name + '/' + type.type + '/',
 			style_folder_array = style_folder.split('/'),
 			style_path = app_dir + style_folder + user_options.scss_file,
 			import_name = type.prefix + options[1] + '-' + options[0] + '.' + type.type,

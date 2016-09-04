@@ -1,3 +1,72 @@
+/*
+
+	COMPONENT carousel
+
+	Using Swiper (http://idangero.us/swiper/api/)
+	$ npm install swiper
+
+*/
+
 .carousel-COMPONENT{
-	
+
+	// Elements
+	&__{
+
+		&wrapper{
+		}
+
+		&slide{
+
+			&--active{
+			}
+
+			&--visible{
+			}
+
+			&--duplicate{
+			}
+
+			&--next{
+			}
+
+			&--prev{
+			}
+		}
+
+		&title{
+		}
+
+		&text{
+		}
+
+		&nav{
+
+			&--next{
+			}
+
+			&--prev{
+			}
+
+			&--disabled{
+			}
+		}
+
+		&scrollbar{
+		}
+
+		&pagination{
+		}
+
+		&bullet{
+
+			&--active{
+
+				&:hover{
+				}
+			}
+
+			&:hover{
+			}
+		}
+	}
 }

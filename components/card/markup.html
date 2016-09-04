@@ -1,11 +1,76 @@
 <!--
 
-	COMPONENT Card
+	COMPONENT card
+
+	Built referencing:
+	- http://thenextweb.com/ca/
+	- http://www.polygon.com/
+
+	Microdata (RDFa) some compatible types:
+	- https://schema.org/BlogPosting
+	- https://schema.org/Product
+	- https://schema.org/Event
+	* for more types see https://schema.org/docs/full.html
 
 -->
 
-<div class="card-COMPONENT">
-	
-	<h2 class="card-COMPONENT__title h2"></h2>
+<article class="card-COMPONENT"
+		 vocab="http://schema.org/"
+		 typeof="BlogPosting">
 
-</div>
+	<header class="card-COMPONENT__header">
+		<h2 class="card-COMPONENT__title h2">
+			<a href="#" 
+			   class="card-COMPONENT__link"
+			   property="url" >
+			    <span property="name">
+					COMPONENT Title
+				</span>
+			</a>
+		</h2>
+		<h3 class="card-COMPONENT__category h3">
+			<a href="#news">
+				News
+			</a>
+		</h3>
+		<div class="card-COMPONENT__tags"
+			property="keywords">
+			<a class="card-COMPONENT__tag">
+				Tag
+			</a>
+		</div>
+	</header>
+
+	<a href="#" 
+	   class="card-COMPONENT__link">
+		<img src="#" 
+			 class="card-COMPONENT__image"
+			 property="image" />
+	</a>
+	
+	<p class="card-COMPONENT__content"
+	   property="description">
+		<!-- COMPONENT EXCERPT HERE -->
+	</p>
+
+	<ul class="card-COMPONENT__byline">
+        <li>
+        	<a href="#author"
+        	   class="card-COMPONENT__author"
+        	   property="author" 
+        	   typeof="person"
+        	   resource="#authorname">
+                Author Name            
+            </a>
+        </li>
+        <li>
+        	<time class="card-COMPONENT__datetime"
+        		  datetime="2015-01-21T05:17:31+01:00"
+        		  property="datePublished"
+        		  content="January 20, 2015">
+        		Jan 20, 2015
+        	</time>
+        </li>
+    </ul>
+
+</article>

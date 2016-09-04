@@ -1,3 +1,65 @@
+/*
+
+	COMPONENT article
+
+	Built referencing:
+	- http://thenextweb.com/ca/
+	- http://www.polygon.com/
+	- https://techcrunch.com/
+	- https://www.smashingmagazine.com/
+
+*/
+
 .article-COMPONENT{
 	
+	// Elements
+	&__{
+
+		&header{
+		}
+
+		&title{
+		}
+
+		&category{
+		}
+
+		&tags{
+		}
+
+		&byline{
+		}
+
+		&author{
+		}
+
+		&datetime{
+		}
+
+		&featured-image{
+		}
+
+		&content{
+		}
+
+		&footer{
+		}
+
+		&sharing{
+		}
+
+		&share{
+		}
+
+		&nav{
+		}
+
+		&nav-item{
+
+			&--prev,
+			&--next{
+
+			}
+		}
+	}
 }

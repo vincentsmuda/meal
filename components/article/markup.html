@@ -1,11 +1,111 @@
 <!--
 
-	COMPONENT article
+	COMPONENT Article
+
+	Built referencing:
+	- http://thenextweb.com/ca/
+	- http://www.polygon.com/
+	- https://techcrunch.com/
+	- https://www.smashingmagazine.com/
+
+	Microdata (RDFa) some compatible types:
+	- https://schema.org/BlogPosting
+	- https://schema.org/Product
+	- https://schema.org/Event
+	* for more types see https://schema.org/docs/full.html
 
 -->
 
-<div class="article-COMPONENT">
+<article class="article-COMPONENT"
+		 vocab="http://schema.org/"
+		 typeof="BlogPosting">
 
-	<!-- CONTENT -->
+	<header class="article-COMPONENT__header">
+	
+		<h1 class="article-COMPONENT__title h1"
+			property="name">
+			COMPONENT Title
+		</h1>
 
-</div>
+		<h2 class="article-COMPONENT__category h3">
+			<a href="#news">
+				News
+			</a>
+		</h2>
+
+		<div class="article-COMPONENT__tags"
+			property="keywords">
+			<a class="article-COMPONENT__tag">
+				Tag
+			</a>
+		</div>
+
+		<ul class="article-COMPONENT__byline">
+	        <li>
+	        	<a href="#author"
+	        	   class="article-COMPONENT__author"
+	        	   property="author" 
+	        	   typeof="person"
+	        	   resource="#authorname">
+	                Author Name            
+	            </a>
+	        </li>
+	        <li>
+	        	<time class="article-COMPONENT__datetime"
+	        		  datetime="2015-01-21T05:17:31+01:00"
+	        		  property="datePublished"
+	        		  content="January 20, 2015">
+	        		Jan 20, 2015
+	        	</time>
+	        </li>
+	    </ul>
+
+	</header>
+
+	<img src="#img" 
+		 class="article-COMPONENT__featured-image"
+		 property="image" />
+
+	<div class="article-COMPONENT__content">
+		<!-- COMPONENT CONTENT HERE -->
+	</div>
+
+	<div class="article-COMPONENT__footer">
+
+		<ul class="article-COMPONENT__sharing">
+			<li>
+				<a href="#facebook" class="article-COMPONENT__share">
+					Facebook
+				</a>
+			</li>
+			<li>
+				<a href="#twitter" class="article-COMPONENT__share">
+					Twitter
+				</a>
+			</li>
+			<li>
+				<a href="#pinterest" class="article-COMPONENT__share">
+					Pinterest
+				</a>
+			</li>
+			<li>
+				<a href="#linkedin" class="article-COMPONENT__share">
+					Linkedin
+				</a>
+			</li>
+		</ul>
+
+		<ul class="article-COMPONENT__nav">
+			<li>
+				<a class="article-COMPONENT__nav-item article-COMPONENT__nav-item--prev">
+					&lsaquo; Previous
+				</a>
+				<a class="article-COMPONENT__nav-item article-COMPONENT__nav-item--next">
+					Next &rsaquo;
+				</a>
+			</li>
+		</ul>
+		
+	</div>
+
+</article>
