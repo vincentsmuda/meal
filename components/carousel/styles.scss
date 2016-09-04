@@ -17,19 +17,22 @@
 
 		&slide{
 
-			&--active{
-			}
+			&--{
 
-			&--visible{
-			}
+				&active{
+				}
 
-			&--duplicate{
-			}
+				&visible{
+				}
 
-			&--next{
-			}
+				&duplicate{
+				}
 
-			&--prev{
+				&next{
+				}
+
+				&prev{
+				}
 			}
 		}
 
@@ -41,13 +44,16 @@
 
 		&nav{
 
-			&--next{
-			}
+			&--{
 
-			&--prev{
-			}
+				&next{
+				}
 
-			&--disabled{
+				&prev{
+				}
+
+				&disabled{
+				}
 			}
 		}
 
@@ -59,9 +65,12 @@
 
 		&bullet{
 
-			&--active{
+			&--{
 
-				&:hover{
+				&active{
+
+					&:hover{
+					}
 				}
 			}
 

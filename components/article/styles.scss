@@ -56,9 +56,12 @@
 
 		&nav-item{
 
-			&--prev,
-			&--next{
+			&--{
 
+				&prev,
+				&next{
+
+				}
 			}
 		}
 	}
