@@ -16,13 +16,13 @@ __Organized:__
 Meal keeps your uncompiled files neatly named and organized within your source folder. Say hello to the simple yet effective "[component-type]-[component-name]" naming convention. Now your component directory will look something like this:
 
 ```
-Before:				 After:
+Before:              After:
 /newsitem.html       /card-news.html
 /productcard.html    /card-product.html
-/blogpost.html 	 	 /card-blog.html
-/newsPost.html 		 /article-news.html
-/single-blog.html 	 /article-blog.html
-/product.html 		 /article-product.html
+/blogpost.html       /card-blog.html
+/newsPost.html       /article-news.html
+/single-blog.html    /article-blog.html
+/product.html        /article-product.html
 ...
 ``` 
 
