@@ -2,7 +2,7 @@
 
 Stop writing the same thing over and over again. Write it once, and write it well.
 
-Meal takes templated files (whether from the npm meal directory or your project directory), replaces occurences of __COMPONENT__ with what you specify in your command `$ meal make cool card` (in this case __cool__), and outputs the files in your resources directory, or wherever you specify within the __meal.json__.
+Meal takes templated files (whether from the npm meal directory or your project directory), replaces occurences of __COMPONENT__ with what you specify in your command `$ meal make news card` (in this case __news__), and outputs the files in your resources directory, or wherever you specify within the __meal.json__.
 
 ##Why
 
