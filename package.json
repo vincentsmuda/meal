@@ -1,6 +1,6 @@
 {
   "name": "meal",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Creates scss, html, and js files via command line from set templates.",
   "scripts": {
     "test": "meal"
