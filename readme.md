@@ -1,5 +1,29 @@
 #Meal
-An easy way to create templated components on the fly. Meal takes templated files (whether from the npm module directory or your project directory), replaces occurences of __COMPONENT__ with what you specify in your command `$ meal make cool card` (in this case __cool__), and outputs the files in your resources directory, or wherever you specify within the __meal.json__.
+
+Stop writing the same thin over and over again. Write it once, write it well.
+
+Meal takes templated files (whether from the npm module directory or your project directory), replaces occurences of __COMPONENT__ with what you specify in your command `$ meal make cool card` (in this case __cool__), and outputs the files in your resources directory, or wherever you specify within the __meal.json__.
+
+##Why
+
+__Consistent__
+By using consistent templates you can increase quality, enforce patterns and methodologies, add complexity, and maintain best practices.
+
+__Speedy__
+Generate the boilerplate you need to get started in an instant. By keeping your files abstract and modular, you no longer have to worry about adding weight to the project.
+
+__Organized__
+Meal keeps your uncompiled files neatly named and organized within your source folder. Say hello to the simple yet effective "[component-type]-[component-name]" naming convention. now your directory will look something like this:
+```
+/card-news.html
+/card-product.html
+/card-blog.html
+/card-gallery.html
+/article-news.html
+/article-blog.html
+/article-product.html
+...
+```
 
 ##Installation
 
@@ -12,7 +36,7 @@ Then call init in your project folder to generate the meal.json
 `$ meal init`
 
 ##meal.json
-After installation, you can specify the any paramater
+After installation, you can specify the meal options:
 
 ```json
 {
