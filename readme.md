@@ -8,6 +8,16 @@ Stop writing the same thing over and over again. Write it once, and write it wel
 
 Meal takes templated files (whether from the npm meal directory or your project directory), replaces occurences of __COMPONENT__ with what you specify in your command `$ meal make news card` (in this case __news__), and outputs the files in your resources directory, or wherever you specify within the __meal.json__.
 
+##Installation
+
+first install it globally
+
+`$ npm install meal -g`
+
+Then call init in your project folder to generate the meal.json
+
+`$ meal init`
+
 ##Why
 
 __Consistent:__
@@ -29,16 +39,6 @@ Before:              After:
 /product.html        /article-product.html
 ...
 ``` 
-
-##Installation
-
-first install it globally
-
-`$ npm install meal -g`
-
-Then call init in your project folder to generate the meal.json
-
-`$ meal init`
 
 ##meal.json
 After installation, you can specify the meal options:
