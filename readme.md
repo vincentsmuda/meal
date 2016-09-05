@@ -83,7 +83,7 @@ prefix | The file's prefix | **_**markup.html
 Spcifying the components directory will tell meal where to look for the template files.
 
 ###scss_file
-Meal auto appends module inclides to your scss file. You can specify the name via this property but remember that the scss file will always be placed on directory up from your file_types "scss" path.
+Meal auto appends module includes to your scss file. You can specify the name via this property but remember that the scss file will always be placed on directory up from your file_types "scss" path.
 
 ##Commands
 
@@ -97,11 +97,11 @@ make __[NAME] [TYPE]__ | generates files from the __[TYPE]__ template using the 
 
 Option | Description | Example
 --- | --- | ---
---x[TYPE] | Skips the __[TYPE]__ file generation | meal make some card --xjs --xscss --xhtml
+--x__[TYPE]__ | Skips the __[TYPE]__ file generation | meal make some card --xjs --xscss (Will skip the scss and js files)
 
 ##Template Files
 
-By default there are template files bundled with meal, however it is understandable that you would like to create your own... ingredients...
+By default there are template files bundled with meal, however it is understandable that you may like to create your own... ingredients...
 
 To start, go through the steps in the installation section then after running `$ meal init` edit the meal.json file's __components_dir__ property to point where ever you like in your project directory (maybe something like "resources/meal_templates").
 
@@ -110,7 +110,7 @@ Within the templates folder, each sub folder will represent a seperate component
 * styles.scss
 * scripts.js
 
-So when you run the `$ meal make news card`, meal will look for the card directory in your defined templates folder. From there it will copy over the contents respectively and create new component files as per the paths in your meal.json.
+When you run the `$ meal make news card`, meal will look for the card directory in your defined templates folder. From there it will copy over the contents respectively and create new component files as per the paths in your meal.json.
 
 Before writing the new files, meal searches and replaces any occurence of the keyword (case sensative) COMPONENT with the defined component name. For example the following will grab the contents of the files within the card directory.
 
@@ -122,7 +122,7 @@ Next it will replace all occurences of __COMPONENT__ with __news__
 
 ```html
 <!-- Template file -->
-<div class="card-COMPONTENT"><div>
+<div class="card-COMPONENT"><div>
 
 <!-- Generated file -->
 <div class="card-news"><div>
@@ -135,6 +135,6 @@ The current casing control that meal allows when writing your template files is 
 
 String | Render | Example (using "news")
 --- | --- | ---
-COMPONTENT   | Lowercase  | card-COMPONTENT -> card-news
-!COMPONTENT  | Capitalize | card-COMPONTENT -> card-News
-!COMPONTENT! | Uppercase  | card-COMPONTENT -> card-NEWS
+COMPONENT   | Lowercase  | card-COMPONTENT -> card-news
+!COMPONENT  | Capitalize | card-COMPONTENT -> card-News
+!COMPONENT! | Uppercase  | card-COMPONTENT -> card-NEWS
