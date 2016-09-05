@@ -77,7 +77,7 @@ type | The type of the source file's template | markup.__html__
 name | The name of the source file's template | __markup__.html
 output_type | The filetype that the source will compile to | markup.html -> some-component.__php__
 path | The path to the output folder | /public/includes
-prefix | The file's prefix | __\___markup.html
+prefix | The file's prefix | **_**markup.html
 
 ###components_dir
 Spcifying the components directory will tell meal where to look for the template files.
