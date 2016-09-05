@@ -8,10 +8,10 @@
  */
 
 module.exports = function() {
-	var list = '\n  Usable components include:';
+	var list = '\n  Valid components include:';
 		for (var i = 0, l = this.components.length; i < l; i++) {
 			list += '\n  - ' + this.components[i];
 		};
 
-	console.log(list + '\n');
+	console.log(this.colors.getColor('green'), list + '\n', this.colors.getColor('default'));
 }

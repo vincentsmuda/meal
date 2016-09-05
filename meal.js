@@ -8,6 +8,7 @@ class Meal {
 
 	constructor () {
 		this.mod_dir = './modules/';
+		this.mod_options = {};
 		this.user_options = {};
 		this.args = {};
 		this.components = [];
@@ -16,6 +17,7 @@ class Meal {
 		this.commander = require('commander');
 		this.mkdirp = require('mkdirp');
 
+		this.colors = require(this.mod_dir + 'colors.js');
 		this.init = require(this.mod_dir + 'init.js');
 		this.paths = require(this.mod_dir + 'paths.js');
 		this.interpret = require(this.mod_dir + 'cli_interpret.js');

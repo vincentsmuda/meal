@@ -18,6 +18,6 @@ module.exports = function() {
 		}
 	}
 
-	console.log('\n  You created a new ' + options[0] + ' ' + options[1] + ' component\n');
+	console.log(this.colors.getColor('green'),'\n  You created a new ' + options[0] + ' ' + options[1] + ' component\n',this.colors.getColor('default'));
 
 }
