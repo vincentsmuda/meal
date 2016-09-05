@@ -26,7 +26,8 @@ Before | After
 /article-blog.html
 /article-product.html
 ...
-``` |
+``` 
+|
 ```
 /card-news.html
 /card-product.html
@@ -36,7 +37,7 @@ Before | After
 /article-blog.html
 /article-product.html
 ...
-
+```
 
 ##Installation
 
