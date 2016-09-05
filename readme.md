@@ -7,7 +7,7 @@ first install it globally
 
 `$ npm install meal -g`
 
-Then call init in your project folder
+Then call init in your project folder to generate the meal.json
 
 `$ meal init`
 
@@ -62,8 +62,13 @@ Meal auto appends module inclides to your scss file. You can specify the name vi
 
 ##Commands
 
-Property | Description | Example
+Command | Description | Example
 --- | --- | ---
 init | Creates a meal.json in your current directory | meal init
 list | Lists all generatable components | meal list
-make __NAME TYPE__ | generates files from the __TYPE__ template | meal make news card
+make __[NAME] [TYPE]__ | generates files from the __[TYPE]__ template using the __[NAME]__ | meal make news card
+
+###Make options
+Option | Description | Example
+--- | --- | ---
+--x[TYPE] | Skips the __[TYPE]__ file generation | meal make some card --xjs --xscss --xhtml

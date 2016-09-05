@@ -10,10 +10,11 @@
 module.exports = function(type) {
 	var options = this.args.make,
 		style_folder = type.path ? type.path.replace(/^\//g, '') + '/../' : 'resources/' + type.name + '/' + type.type + '/',
+		inclu_folder = type.path ? type.path.replace(/^\//g, '').split('/')  : ['components'],
 		style_folder_array = style_folder.split('/'),
 		style_path = this.paths.app_dir + style_folder + this.user_options.scss_file,
 		import_name = type.prefix + options[1] + '-' + options[0] + '.' + type.type,
-		import_string = '\n\t@import \"components/' + options[1] + '-' + options[0] + '\";\n\n';
+		import_string = '\n\t@import \"' + inclu_folder[inclu_folder.length-1] + '/' + options[1] + '-' + options[0] + '\";\n\n';
 	this.fs.stat(style_path, (err, stat) => {
 		if(err === null) {
 	    	this.fs.readFile(style_path, 'utf8', (err,data) => {
