@@ -75,3 +75,41 @@ Option | Description | Example
 --x[TYPE] | Skips the __[TYPE]__ file generation | meal make some card --xjs --xscss --xhtml
 
 ##Template Files
+
+By default there are template files bundled with meal, however it is understandable that you would like to create your own... ingredients...
+
+To start, go through the steps in the installation section then after running `$ meal init` edit the meal.json file's __components_dir__ property to point where ever you like in your project directory (maybe something like "resources/meal_templates").
+
+Within the templates folder, each sub folder will represent a seperate component. Within each subfolder you will need to create three separate files:
+* markup.html
+* styles.scss
+* scripts.js
+
+So when you run the `$ meal make news card`, meal will look for the card directory in your defined templates folder. From there it will copy over the contents respectively and create new component files as per the paths in your meal.json.
+
+Before writing the new files, meal searches and replaces any occurence of the keyword (case sensative) COMPONENT with the defined component name. For example the following will grab the contents of the files within the card directory.
+
+```
+$ meal make news card
+```
+
+Next it will replace all occurences of __COMPONENT__ with __news__
+
+```html
+<!-- Template file -->
+<div class="card-COMPONTENT"><div>
+
+<!-- Generated file -->
+<div class="card-news"><div>
+
+```
+
+###Component Naming Casing
+
+The current casing control that meal allows when writing your template files is as follows:
+
+String | Render | Example (using "news")
+--- | --- | ---
+COMPONTENT   | Lowercase  | card-COMPONTENT -> card-news
+!COMPONTENT  | Capitalize | card-COMPONTENT -> card-News
+!COMPONTENT! | Uppercase  | card-COMPONTENT -> card-NEWS
