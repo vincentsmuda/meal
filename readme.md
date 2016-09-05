@@ -19,11 +19,10 @@ Meal keeps your uncompiled files neatly named and organized within your source f
 Before:				 After:
 /newsitem.html       /card-news.html
 /productcard.html    /card-product.html
-			/card-blog.html
-			/card-gallery.html
-			/article-news.html
-			/article-blog.html
-			/article-product.html
+/blogpost.html 	 	 /card-blog.html
+/newsPost.html 		 /article-news.html
+/single-blog.html 	 /article-blog.html
+/product.html 		 /article-product.html
 ...
 ``` 
 
