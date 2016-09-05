@@ -69,6 +69,9 @@ list | Lists all generatable components | meal list
 make __[NAME] [TYPE]__ | generates files from the __[TYPE]__ template using the __[NAME]__ | meal make news card
 
 ###Make options
+
 Option | Description | Example
 --- | --- | ---
 --x[TYPE] | Skips the __[TYPE]__ file generation | meal make some card --xjs --xscss --xhtml
+
+##Template Files
