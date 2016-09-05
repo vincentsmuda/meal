@@ -15,29 +15,17 @@ Generate the boilerplate you need to get started in an instant. By keeping your 
 __Organized:__
 Meal keeps your uncompiled files neatly named and organized within your source folder. Say hello to the simple yet effective "[component-type]-[component-name]" naming convention. Now your component directory will look something like this:
 
-Before | After
---- | ---
 ```
-/card-news.html
-/card-product.html
-/card-blog.html
-/card-gallery.html
-/article-news.html
-/article-blog.html
-/article-product.html
+Before:				 After:
+/newsitem.html       /card-news.html
+/productcard.html    /card-product.html
+			/card-blog.html
+			/card-gallery.html
+			/article-news.html
+			/article-blog.html
+			/article-product.html
 ...
 ``` 
-|
-```
-/card-news.html
-/card-product.html
-/card-blog.html
-/card-gallery.html
-/article-news.html
-/article-blog.html
-/article-product.html
-...
-```
 
 ##Installation
 
