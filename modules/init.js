@@ -15,7 +15,7 @@ module.exports = function() {
 	    	if(err === null){
 		    	Object.assign(this.user_options, this.mod_options, JSON.parse(data));
 			}else{
-				this.user_options = mod_options;
+				this.user_options = this.mod_options;
 			}
 
 			this.interpret();

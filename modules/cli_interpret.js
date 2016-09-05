@@ -10,7 +10,7 @@ module.exports = function () {
 		
 	this.fs.stat(this.user_options.components_dir, (err, stat) => {
 
-		if(err.code == 'ENOENT') {
+		if(err !== null && err.code == 'ENOENT') {
 	    	console.error(
 	    		this.colors.getColor('red'),
 	    		'\nWarning!\nthe component directory (' + 
