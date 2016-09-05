@@ -33,7 +33,7 @@ class Meal {
 		this.args = this.commander
 			.version('0.0.1')
 			.option('--list', 'List usable components')
-		 	.option('-a --add [component_name] [component_type]', 'Add a new component')
+		 	.option('-m --make [component_name] [component_type]', 'Add a new component')
 		  	.option('-xj --xjs', 'Without javascript file')
 		  	.option('-xs --xscss', 'Without scss file')
 		  	.option('-xh --xhtml', 'Without markup file')

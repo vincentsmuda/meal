@@ -6,7 +6,7 @@
  */
 
 module.exports = function () {
-	var options = this.args.add;
+	var options = this.args.make;
 		
 	this.fs.stat(this.user_options.components_dir, (err, stat) => {
 

@@ -8,7 +8,7 @@
  */
 
 module.exports = function(type) {
-	var options = this.args.add,
+	var options = this.args.make,
 		style_folder = type.path ? type.path.replace(/^\//g, '') + '/../' : 'resources/' + type.name + '/' + type.type + '/',
 		style_folder_array = style_folder.split('/'),
 		style_path = this.paths.app_dir + style_folder + this.user_options.scss_file,

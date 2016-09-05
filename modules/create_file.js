@@ -8,7 +8,7 @@
  */
 
 module.exports = function(type) {
-	var options = this.args.add;
+	var options = this.args.make;
 	this.fs.readFile(this.user_options.components_dir + '/' + options[1] + '/' + type.name + '.' + type.type, 'utf8', (err,data) => {
 		if (err) return console.error(err);
 		var contents = data.replace(/COMPONENT/g, options[0]),

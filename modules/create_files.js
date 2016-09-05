@@ -7,7 +7,7 @@
 
 module.exports = function() {
 
-	var options = this.args.add,
+	var options = this.args.make,
 		types = this.user_options.file_types;
 
 	for (var i = 0, l = types.length; i < l; i++){
