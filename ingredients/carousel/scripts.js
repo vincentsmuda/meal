@@ -1,6 +1,6 @@
 /*
 
-	COMPONENT carousel
+	!COMPONENT! CAROUSEL
 
 	Using Swiper (http://idangero.us/swiper/api/)
 	$ npm install swiper

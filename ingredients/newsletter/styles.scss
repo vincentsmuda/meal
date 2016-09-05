@@ -1,0 +1,60 @@
+/*
+
+	!COMPONENT! NEWSLETTER
+
+*/
+
+.newsletter-COMPONENT{
+
+	&__{
+
+		&title{
+		}
+
+		&text{
+		}
+
+		&form{
+		}
+
+		&input{
+		}
+
+		&button{
+		}
+
+		&state{
+			
+			&--{
+
+				&pre{
+					display: block;
+				}
+
+				&post{
+					display: none;
+				}
+			}
+		}
+	}
+
+	&--{
+
+		&sending{
+		}
+
+		&sent{
+
+			.newsletter-COMPONENT__state--{
+			
+				&pre{
+					display: none;
+				}
+
+				&post{
+					display: block;
+				}
+			}
+		}
+	}
+}

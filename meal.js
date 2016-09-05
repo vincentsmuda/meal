@@ -26,6 +26,7 @@ class Meal {
 		this.createFile = require(this.mod_dir + 'create_file.js');
 		this.importScss = require(this.mod_dir + 'import_scss.js');
 		this.createDirs = require(this.mod_dir + 'create_dirs.js');
+		this.capitalize = require(this.mod_dir + 'capitalize.js');
 	}
 
 	cook () {

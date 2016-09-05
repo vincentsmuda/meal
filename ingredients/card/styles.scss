@@ -1,6 +1,6 @@
 /*
 
-	COMPONENT card
+	!COMPONENT! CARD
 
 	Built referencing:
 	- http://thenextweb.com/ca/

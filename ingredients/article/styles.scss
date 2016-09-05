@@ -1,6 +1,6 @@
 /*
 
-	COMPONENT article
+	!COMPONENT! ARTICLE
 
 	Built referencing:
 	- http://thenextweb.com/ca/
