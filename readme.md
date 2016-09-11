@@ -3,29 +3,23 @@
 
 
 #Meal
-
-Write components once, and write them well.
-
-Generates scss, js, and markup (html, php, blade ...) upon command.
+A component file generator that creates scss, js, and markup upon command.
 
 ```
 $ meal make news card
 
-Yields:
+Creates:
 - /path/to/your/html/components/card-news.html
 - /path/to/your/scss/components/_card-news.scss
 - /path/to/your/js/components/_card-news.js
 
 And replaces all string occurences in your templates:
-
 html -
 	<div class="card-COMPONTENT"... ->
 	<div class="card-news"...
-
 scss -
 	.card-COMPONTENT... ->
 	.card-news...
-
 js   - 
 	getElementByClassName('card-COMPONTENT')... ->
 	getElementByClassName('card-news')...
