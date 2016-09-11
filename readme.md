@@ -158,5 +158,5 @@ The current casing control that meal allows when writing your template files is 
 String | Render | Example (using "news")
 --- | --- | ---
 COMPONENT   | Lowercase  | card-COMPONTENT -> card-news
-!COMPONENT  | Capitalize | card-COMPONTENT -> card-News
-!COMPONENT! | Uppercase  | card-COMPONTENT -> card-NEWS
+!COMPONENT  | Capitalize | card-!COMPONTENT -> card-News
+!COMPONENT! | Uppercase  | card-!COMPONTENT! -> card-NEWS
