@@ -1,5 +1,5 @@
 [![npm](https://img.shields.io/npm/v/npm.svg?maxAge=2592000)]()
-[![meal](https://img.shields.io/badge/Meal-v1.0.21-blue.svg?style=flat&maxAge=2592000)]() 
+[![meal](https://img.shields.io/badge/Meal-v1.0.22-blue.svg?style=flat&maxAge=2592000)]() 
 
 
 #Meal
