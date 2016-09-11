@@ -4,9 +4,33 @@
 
 #Meal
 
-Stop writing the same thing over and over again. Write it once, and write it well.
+Write components once, and write them well.
 
-Meal takes templated files (whether from the npm meal directory or your project directory), replaces occurences of __COMPONENT__ with what you specify in your command `$ meal make news card` (in this case __news__), and outputs the files in your resources directory, or wherever you specify within the __meal.json__.
+Generates scss, js, and markup (html, php, blade ...) upon command.
+
+```
+$ meal make news card
+
+Yields:
+- /path/to/your/html/components/card-news.html
+- /path/to/your/scss/components/_card-news.scss
+- /path/to/your/js/components/_card-news.js
+
+And replaces all string occurences in your templates:
+
+html -
+	<div class="card-COMPONTENT"... ->
+	<div class="card-news"...
+
+scss -
+	.card-COMPONTENT... ->
+	.card-news...
+
+js   - 
+	getElementByClassName('card-COMPONTENT')... ->
+	getElementByClassName('card-news')...
+
+```
 
 ##Installation
 
