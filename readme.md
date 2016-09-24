@@ -1,5 +1,5 @@
 [![npm](https://img.shields.io/npm/v/npm.svg?maxAge=2592000)]()
-[![meal](https://img.shields.io/badge/Meal-v1.0.22-blue.svg?style=flat&maxAge=2592000)]() 
+[![meal](https://img.shields.io/badge/Meal-v1.1.0-blue.svg?style=flat&maxAge=2592000)]() 
 
 
 #Meal
@@ -66,22 +66,26 @@ After installation, you can specify the meal options:
 	"file_types": [
 		{
 			"type": "html",
-			"name": "markup",
 			"output_type": "html",
+			"component_as_dir": true,
 			"path": "/resources/markup/html/components",
 			"prefix": ""
 		},
 		{
 			"type": "scss",
-			"name": "styles",
 			"output_type": "scss",
+			"component_as_dir": true,
 			"path": "/resources/styles/scss/components",
+			"import": {
+				"name": "style.scss",
+				"path": "/resources/scss/"
+			},
 			"prefix": "_"
 		},
 		{
 			"type": "js",
-			"name": "scripts",
 			"output_type": "js",
+			"component_as_dir": true,
 			"path": "/resources/scripts/js/components",
 			"prefix": "_"
 		}

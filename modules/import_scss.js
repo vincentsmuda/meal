@@ -46,7 +46,7 @@ module.exports = function(type) {
 		}
 	}
 
-	import_string = '\n\t@import \"' + inclu_path + options[1] + (!!type.component_dirs ? '/' : '-') + options[0] + '\";\n\n';	
+	import_string = '\n\t@import \"' + inclu_path + options[1] + (!!type.component_as_dir ? '/' : '-') + options[0] + '\";\n\n';	
 
 	this.fs.stat(style_path, (err, stat) => {
 		if(err === null) {
