@@ -10,7 +10,11 @@
 module.exports = function(type) {
 	var options = this.args.make;
 	this.fs.readFile(this.user_options.components_dir + '/' + options[1] + '/ingredient.' + type.type, 'utf8', (err,data) => {
-		if (err) return console.error(err);
+		if(err === null);
+		else if(err.code === 'ENOENT')
+			return console.log(this.colors.getColor('red'),'\n  the ' + type.type + ' file for the ' + options[1] + ' component does not exist.\n  Looking -> ' + this.user_options.components_dir + '/' + options[1] + '/ingredient.' + type.type + '\n',this.colors.getColor('default'));
+		else if (err)
+			return console.error(err);
 
 		var contents = '',
 			filename = (!!type.prefix ? type.prefix : '') + (!!type.components_as_dirs ? '' : options[1] + '-') + options[0] + '.' + (!!type.output_type ? type.output_type : type.type),

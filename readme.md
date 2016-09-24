@@ -1,7 +1,3 @@
-[![npm](https://img.shields.io/npm/v/npm.svg?maxAge=2592000)]()
-[![meal](https://img.shields.io/badge/Meal-v1.1.0-blue.svg?style=flat&maxAge=2592000)]() 
-
-
 #Meal
 A component file generator that creates scss, js, and markup upon command.
 
@@ -99,17 +95,18 @@ After installation, you can specify the meal options:
 
 Property | Description | Example
 --- | --- | ---
-type | The type of the source file's template | markup.__html__
-name | The name of the source file's template | __markup__.html
-output_type | The filetype that the source will compile to | markup.html -> some-component.__php__
+type | The type of the source file's template | ingredient.__html__
+name | The name of the source file's template | __ingredient__.html
+output_type | The filetype that the source will compile to | ingredient.html -> card-name.__php__
 path | The path to the output folder | /public/includes
 prefix | The file's prefix | **_**markup.html
+components_as_dirs | whether to output into separate directories or not | false -> ../__card-__name.php
+true -> ../__card__/name.php
+import.name | the name of the scss importing file | style.scss
+import.path | the path to the importing file | /resources/assets/scss/
 
 ###components_dir
 Spcifying the components directory will tell meal where to look for the template files.
-
-###scss_file
-Meal auto appends module includes to your scss file. You can specify the name via this property but remember that the scss file will always be placed on directory up from your file_types "scss" path.
 
 ##Commands
 
@@ -131,7 +128,7 @@ By default there are template files bundled with meal, however it is understanda
 
 To start, go through the steps in the installation section then after running `$ meal init` edit the meal.json file's __components_dir__ property to point where ever you like in your project directory (maybe something like "resources/meal_templates").
 
-Within the templates folder, each sub folder will represent a seperate component. Within each subfolder you will need to create three separate files:
+Within the templates folder, each sub folder will represent a separate component. Within each subfolder you will need to create three separate files:
 * markup.html
 * styles.scss
 * scripts.js

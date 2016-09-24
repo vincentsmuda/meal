@@ -40,7 +40,7 @@ class Meal {
 	cook () {
 
 		this.args = this.commander
-			.version('0.0.1')
+			.version('1.1.1')
 			.option('--list', 'List usable components')
 			.option('--init', 'Creates a meal.json in your current directory')
 		 	.option('--make [component_name] [component_type]', 'Add a new component')
