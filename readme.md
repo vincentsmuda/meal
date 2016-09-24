@@ -100,7 +100,7 @@ name | The name of the source file's template | __ingredient__.html
 output_type | The filetype that the source will compile to | ingredient.html -> card-name.__php__
 path | The path to the output folder | /public/includes
 prefix | The file's prefix | **_**markup.html
-components_as_dirs | whether to output into separate directories or not | false -> ../__card-__name.php, true -> ../__card__/name.php
+components_as_dirs | whether to output into separate directories or not | false -> ../__card__-name.php, true -> ../__card__/name.php
 import.name | the name of the scss importing file | style.scss
 import.path | the path to the importing file | /resources/assets/scss/
 
