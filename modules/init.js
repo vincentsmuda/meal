@@ -24,12 +24,12 @@ module.exports = function() {
 			// remove leading and trailing slashes
 			this.user_options.components_dir = 
 				this.user_options.components_dir;
-			for (var i = this.user_options['file_types'].length - 1; i >= 0; i--) {
-				this.user_options['file_types'][i].path = 
-					this.user_options['file_types'][i].path.replace(/^\/|\/$/g, '');
-				if(!!this.user_options['file_types'][i].import)
-					this.user_options['file_types'][i].import.path = 
-						this.user_options['file_types'][i].import.path.replace(/^\/|\/$/g, '');
+			for (var i = this.user_options['ingredients'].length - 1; i >= 0; i--) {
+				this.user_options['ingredients'][i].path = 
+					this.user_options['ingredients'][i].path.replace(/^\/|\/$/g, '');
+				if(!!this.user_options['ingredients'][i].import)
+					this.user_options['ingredients'][i].import.path = 
+						this.user_options['ingredients'][i].import.path.replace(/^\/|\/$/g, '');
 			};
 
 			this.interpret();

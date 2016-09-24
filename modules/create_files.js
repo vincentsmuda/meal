@@ -8,7 +8,7 @@
 module.exports = function() {
 
 	var options = this.args.make,
-		types = this.user_options.file_types;
+		types = this.user_options.ingredients;
 
 	for (var i = 0, l = types.length; i < l; i++){
 		if(this.args.rawArgs.indexOf('--x'+types[i].type) == -1){

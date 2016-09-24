@@ -59,7 +59,7 @@ After installation, you can specify the meal options:
 
 ```json
 {
-	"file_types": [
+	"ingredients": [
 		{
 			"type": "html",
 			"output_type": "html",
@@ -91,7 +91,7 @@ After installation, you can specify the meal options:
 }
 ```
 
-###file_types
+###ingredients
 
 Property | Description | Example
 --- | --- | ---

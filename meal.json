@@ -1,5 +1,5 @@
 {
-	"file_types": [
+	"ingredients": [
 		{
 			"type": "html",
 			"components_as_dirs": true,
