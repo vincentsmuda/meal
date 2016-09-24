@@ -2,12 +2,12 @@
 	"file_types": [
 		{
 			"type": "html",
-			"component_as_dir": true,
+			"components_as_dirs": true,
 			"path": "/resources/html/"
 		},
 		{
 			"type": "scss",
-			"component_as_dir": true,
+			"components_as_dirs": true,
 			"path": "/resources/scss/",
 			"prefix": "_",
 			"import": {
@@ -17,7 +17,7 @@
 		},
 		{
 			"type": "js",
-			"component_as_dir": true,
+			"components_as_dirs": true,
 			"path": "/resources/js/",
 			"prefix": "_"
 		}

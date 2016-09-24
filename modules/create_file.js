@@ -13,10 +13,10 @@ module.exports = function(type) {
 		if (err) return console.error(err);
 
 		var contents = '',
-			filename = (!!type.prefix ? type.prefix : '') + (!!type.component_as_dir ? '' : options[1] + '-') + options[0] + '.' + (!!type.output_type ? type.output_type : type.type),
+			filename = (!!type.prefix ? type.prefix : '') + (!!type.components_as_dirs ? '' : options[1] + '-') + options[0] + '.' + (!!type.output_type ? type.output_type : type.type),
 			dirs = type.path ? type.path : 'resources/' + type.type + '/components';
 
-		if(!!type.component_as_dir) dirs += '/' + options[1] + '/';
+		if(!!type.components_as_dirs) dirs += '/' + options[1] + '/';
 
 		// UPPERCASE, Capitalize, lowercase
 		contents = data.replace(/!COMPONENT!/g, options[0].toUpperCase())

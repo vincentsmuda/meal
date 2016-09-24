@@ -67,14 +67,14 @@ After installation, you can specify the meal options:
 		{
 			"type": "html",
 			"output_type": "html",
-			"component_as_dir": true,
+			"components_as_dirs": true,
 			"path": "/resources/markup/html/components",
 			"prefix": ""
 		},
 		{
 			"type": "scss",
 			"output_type": "scss",
-			"component_as_dir": true,
+			"components_as_dirs": true,
 			"path": "/resources/styles/scss/components",
 			"import": {
 				"name": "style.scss",
@@ -85,7 +85,7 @@ After installation, you can specify the meal options:
 		{
 			"type": "js",
 			"output_type": "js",
-			"component_as_dir": true,
+			"components_as_dirs": true,
 			"path": "/resources/scripts/js/components",
 			"prefix": "_"
 		}
