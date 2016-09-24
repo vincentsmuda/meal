@@ -20,7 +20,6 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^2.9.0",
-    "liftoff": "^2.3.0",
     "mkdirp": "^0.5.1"
   }
 }
