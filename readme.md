@@ -96,7 +96,6 @@ After installation, you can specify the meal options:
 Property | Description | Example
 --- | --- | ---
 type | The type of the source file's template | ingredient.__html__
-name | The name of the source file's template | __ingredient__.html
 output_type | The filetype that the source will compile to | ingredient.html -> card-name.__php__
 path | The path to the output folder | /public/includes
 prefix | The file's prefix | **_**markup.html
