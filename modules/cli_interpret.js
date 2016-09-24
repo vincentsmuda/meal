@@ -10,12 +10,12 @@ module.exports = function () {
 
 	this.fs.stat(this.user_options.components_dir, (err, stat) => {
 
-		if(err !== null && err.code == 'ENOENT') {
+		if(err !== null && err.code == 'ENOENT' && this.has_initd) {
 	    	console.error(
 	    		this.colors.getColor('red'),
 	    		'\nWarning!\nthe component directory (' + 
-	    			this.paths.app_dir + this.user_options.components_dir + 
-	    		') doesn\'t exist.\n\nMake sure to create, and populate, it with components.' +
+	    			this.user_options.components_dir + 
+	    		') doesn\'t exist.\n\nMake sure to create, and populate, it with components by running `$ meal init`.' +
 	    		' In the meantime, the default package directory will be used.\n\n' +
 	    		'To learn more about how to make and structure a component directory, visit ' +
 	    		'https://www.npmjs.com/package/meal',
@@ -56,7 +56,10 @@ module.exports = function () {
 		} else if(this.args.list) {
 			this.listComponents();
 		} else if(this.args.init) {
+			console.log('');
 			this.makeJson();
+			this.makeIngreds();
+			console.log('');
 		} else if(!this.has_initd) {
 			console.log(this.colors.getColor('red'), '\n  First, run: $ meal init\n', this.colors.getColor('default'));
 		} else {

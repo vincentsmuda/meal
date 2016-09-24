@@ -8,11 +8,8 @@
  * 	
  */
 
-var path = require('path'),
-	mod_dir = path.dirname(require.main.filename);
-
 module.exports = {
-	mod_dir: mod_dir,
+	mod_dir: '',
 	app_dir: './',
-	req_dir: mod_dir + '/modules/'
+	req_dir: ''
 };

@@ -3,7 +3,7 @@
  * 	Import Scss
  * 	Appends the scss import statement to the defined main scss file
  *  
- * 	@param {Object} type The filetype being created {type,name,path,prefix}
+ * 	@param {Object} type The filetype being created {type,path,prefix}
  * 	
  */
 
