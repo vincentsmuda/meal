@@ -127,9 +127,9 @@ By default there are template files bundled with meal, however it is understanda
 To start, go through the steps in the installation section then after running `$ meal init` edit the meal.json file's __components_dir__ property to point where ever you like in your project directory (maybe something like "resources/meal_templates").
 
 Within the templates folder, each sub folder will represent a separate component. Within each subfolder you will need to create three separate files:
-* markup.html
-* styles.scss
-* scripts.js
+* ingredient.html
+* ingredient.scss
+* ingredient.js
 
 When you run the `$ meal make news card`, meal will look for the card directory in your defined templates folder. From there it will copy over the contents respectively and create new component files as per the paths in your meal.json.
 
