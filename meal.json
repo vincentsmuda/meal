@@ -2,20 +2,23 @@
 	"file_types": [
 		{
 			"type": "html",
-			"name": "markup",
-			"path": "/resources/markup/html/components",
-			"prefix": ""
+			"component_dirs": true,
+			"path": "/resources/html/"
 		},
 		{
 			"type": "scss",
-			"name": "styles",
-			"path": "/resources/styles/scss/components",
-			"prefix": "_"
+			"component_dirs": true,
+			"path": "/resources/scss/",
+			"prefix": "_",
+			"import": {
+				"name": "style.scss",
+				"path": "/resources/scss/"
+			}
 		},
 		{
 			"type": "js",
-			"name": "scripts",
-			"path": "/resources/scripts/js/components",
+			"component_dirs": true,
+			"path": "/resources/js/",
 			"prefix": "_"
 		}
 	],

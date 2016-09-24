@@ -9,12 +9,14 @@
 
 module.exports = function(type) {
 	var options = this.args.make;
-	this.fs.readFile(this.user_options.components_dir + '/' + options[1] + '/' + type.name + '.' + type.type, 'utf8', (err,data) => {
+	this.fs.readFile(this.user_options.components_dir + '/' + options[1] + '/ingredient.' + type.type, 'utf8', (err,data) => {
 		if (err) return console.error(err);
-		
+
 		var contents = '',
-			filename = type.prefix + options[1] + '-' + options[0] + '.' + (!!type.output_type ? type.output_type : type.type),
-			dirs = type.path ? type.path.replace(/^\//g, '') : 'resources/' + type.name + '/' + type.type + '/components';
+			filename = (!!type.prefix ? type.prefix : '') + (!!type.component_dirs ? '' : options[1] + '-') + options[0] + '.' + (!!type.output_type ? type.output_type : type.type),
+			dirs = type.path ? type.path : 'resources/' + type.type + '/components';
+
+		if(!!type.component_dirs) dirs += '/' + options[1] + '/';
 
 		// UPPERCASE, Capitalize, lowercase
 		contents = data.replace(/!COMPONENT!/g, options[0].toUpperCase())

@@ -26,7 +26,7 @@ module.exports = function () {
 
 		this.components = this.fs.readdirSync(this.user_options.components_dir).filter(v => v[0] !== '.');
 	
-		if(options) {
+		if(options && this.has_initd) {
 
 			switch (options.length) {
 				case 0:
@@ -57,6 +57,8 @@ module.exports = function () {
 			this.listComponents();
 		} else if(this.args.init) {
 			this.makeJson();
+		} else if(!this.has_initd) {
+			console.log(this.colors.getColor('red'), '\n  First, run: $ meal init\n', this.colors.getColor('default'));
 		} else {
 			this.args.outputHelp();
 		}

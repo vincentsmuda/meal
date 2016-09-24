@@ -12,6 +12,7 @@ class Meal {
 		this.user_options 	= {};
 		this.args 			= {};
 		this.components 	= [];
+		this.has_initd		= false;
 
 		this.fs 		= require('fs');
 		this.commander 	= require('commander');
