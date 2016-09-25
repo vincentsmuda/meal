@@ -46,7 +46,16 @@ module.exports = function(type) {
 		}
 	}
 
-	import_string = '\n\t@import \"' + inclu_path + options[1] + (!!type.components_as_dirs ? '/' : '-') + options[0] + '\";\n\n';	
+	import_string = 
+		'\n\t@import \"' + 
+		inclu_path +
+		(
+			!!type.components_as_dirs ? 
+			this.pluralize(options[1]) + '/' : 
+			options[1] + '-'
+		) + 
+		options[0] +
+		'\";\n\n';	
 
 	this.fs.stat(style_path, (err, stat) => {
 		if(err === null) {

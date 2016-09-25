@@ -33,6 +33,7 @@ class Meal {
 		this.importScss 	= require(this.mod_dir + 'import_scss.js');
 		this.createDirs 	= require(this.mod_dir + 'create_dirs.js');
 		this.capitalize 	= require(this.mod_dir + 'capitalize.js');
+		this.pluralize 		= require(this.mod_dir + 'pluralize.js');
 		this.makeJson 		= require(this.mod_dir + 'make_json.js');
 		this.makeIngreds	= require(this.mod_dir + 'make_ingredients_dir.js');
 	}
