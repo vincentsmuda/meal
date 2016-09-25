@@ -8,8 +8,11 @@
  * 	
  */
 
-module.exports = function(dirs,cb) { 
-	this.mkdirp(dirs, function(err) { 
-	    cb(dirs);
-	});
+module.exports = function(dirs) {
+	return new Promise((resolve,reject) => 
+		this.mkdirp(dirs, err => { 
+			if(err) reject(err);
+			else resolve(dirs);
+		})
+	);
 };

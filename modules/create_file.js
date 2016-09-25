@@ -28,18 +28,19 @@ module.exports = function(type) {
 		 	   		   .replace(/!COMPONENT/g, this.capitalize(options[0]))
 		 	   		   .replace(/COMPONENT/g, options[0].toLowerCase());
 
-		this.createDirs(this.paths.app_dir + dirs, (dir) => {
-			var filepath = dir + '/' + filename;
-			this.fs.stat(filepath, (err, stat) => {
-				if(err === null) {
-
-			    }else if(err.code == 'ENOENT') {
-			        this.fs.writeFile(filepath, contents);
-			    } else {
-			        console.log('Some other error: ', err.code);
-			    }
+		this.createDirs(this.paths.app_dir + dirs)
+			.then(dir => {
+				var filepath = dir + '/' + filename;
+				this.fs.stat(filepath, (err, stat) => {
+					if(err === null) {
+						// do nothing
+				    }else if(err.code == 'ENOENT') {
+				        this.fs.writeFile(filepath, contents);
+				    } else {
+				        console.log('Some other error: ', err.code);
+				    }
+				});
+				if(type.type == 'scss') this.importScss(type);
 			});
-			if(type.type == 'scss') this.importScss(type);
-		});
 	});
 }

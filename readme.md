@@ -86,8 +86,7 @@ After installation, you can specify the meal options:
 			"prefix": "_"
 		}
 	],
-	"components_dir": "/ingredients",
-	"scss_file": "style.scss"
+	"components_dir": "/ingredients"
 }
 ```
 
