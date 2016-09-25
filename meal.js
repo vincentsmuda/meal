@@ -23,6 +23,7 @@ class Meal {
 		this.paths.mod_dir  = this.path.dirname(require.main.filename);
 		this.paths.req_dir	= this.paths.mod_dir + '/modules/';
 
+		this.file_read 		= require(this.mod_dir + 'file_read.js');
 		this.colors 		= require(this.mod_dir + 'colors.js');
 		this.duplicateDir   = require(this.mod_dir + 'copy_dirs_recursively.js');
 		this.init 			= require(this.mod_dir + 'init.js');
