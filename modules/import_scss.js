@@ -46,8 +46,7 @@ module.exports = function(type) {
 		}
 	}
 
-	import_string = 
-		'\n\t@import \"' + 
+	import_string = '@import \"' + 
 		inclu_path +
 		(
 			!!type.components_as_dirs ? 
@@ -55,15 +54,17 @@ module.exports = function(type) {
 			options[1] + '-'
 		) + 
 		options[0] +
-		'\";\n\n';	
+		'\";';
+	import_string_formatted = '\n\t' + import_string + '\n\n';	
 
 	this.fs.stat(style_path, (err, stat) => {
 		if(err === null) {
 	    	this.fs.readFile(style_path, 'utf8', (err,data) => {
-	    		this.fs.writeFile(style_path, '\n' + data.trim() + import_string);
+	    		if(data.indexOf(import_string) < 0)
+		    		this.fs.writeFile(style_path, '\n' + data.trim() + import_string_formatted);
 	    	});
 	    }else if(err.code == 'ENOENT') {
-	    	this.fs.writeFile(style_path, '\n/*\n *\n *\tMEAL IMPORTS (LEAVE AT BOTTOM)\n *\n */\n' + import_string);
+	    	this.fs.writeFile(style_path, '\n/*\n *\n *\tMEAL IMPORTS (LEAVE AT BOTTOM)\n *\n */\n' + import_string_formatted);
 	    }
 	});
 
