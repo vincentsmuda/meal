@@ -6,7 +6,7 @@
 
 module.exports = function () {
 
-	var src = this.paths.mod_dir + '/ingredients',
+	var src = this.mod_options.components_dir,
 		dest = this.paths.app_dir + 'ingredients';
 
 	if(!this.fs.existsSync(dest)){

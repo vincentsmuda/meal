@@ -7,6 +7,7 @@
 module.exports = function () {
 	var new_meal = this.paths.app_dir + '/meal.json';
 	this.fs.readFile(this.paths.mod_dir + '/meal.json', 'utf8', (err,data) => {
+		data = data.replace('/recipes/classic', 'ingredients');
 		this.fs.stat(new_meal, (err, stat) => {
 			if(err === null) {
 				console.log(this.colors.getColor('red'), '  The meal.json file already exists in this directory.\n', this.colors.getColor('default'));
