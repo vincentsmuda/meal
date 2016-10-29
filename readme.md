@@ -44,10 +44,12 @@ __Organized:__
 Meal keeps your uncompiled files neatly named and organized within your source folder. Say hello to the simple yet effective "[component-type]-[component-name]" naming convention.
 
 ```
-Source:                After:                 Or After (components_as_dirs enabled)
-/ingredient.html       /card-news.html        /cards/news.html
-/ingredient.scss       /_card-news.scss       /cards/_news.scss
-/ingredient.js         /_card-news.js         /cards/_news.js
+$meal make news card
+
+Source:               After:                Or After (components_as_dirs enabled)
+ingredient.html       card-news.html        cards/news.html
+ingredient.scss       _card-news.scss       cards/_news.scss
+ingredient.js         _card-news.js         cards/_news.js
 ``` 
 
 ##meal.json
