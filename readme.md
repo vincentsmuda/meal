@@ -46,10 +46,10 @@ Meal keeps your uncompiled files neatly named and organized within your source f
 ```
 $meal make news card
 
-Source:               After:                Or After (components_as_dirs enabled)
-ingredient.html       card-news.html        cards/news.html
-ingredient.scss       _card-news.scss       cards/_news.scss
-ingredient.js         _card-news.js         cards/_news.js
+Source:                    After:                Or After (components_as_dirs enabled)
+card/ingredient.html       card-news.html        cards/news.html
+card/ingredient.scss       _card-news.scss       cards/_news.scss
+card/ingredient.js         _card-news.js         cards/_news.js
 ``` 
 
 ##meal.json
