@@ -2,29 +2,29 @@
 
 	!COMPONENT! CAROUSEL
 
-	Using Swiper (http://idangero.us/swiper/api/)
-	$ npm install swiper
+	Using Lory.js (http://meandmax.github.io/lory/)
+	$ npm install lory.js
 
 -->
 
 <div class="carousel-COMPONENT">
-
-	<div class="carousel-COMPONENT__wrapper">
-        <div class="carousel-COMPONENT__slide">
-        	<h2 class="carousel-COMPONENT__title">
-        		Slide 1
-        	</h2>
-        	<p class="carousel-COMPONENT__text">
-        		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        	</p>
-        </div>
-    </div>
-    
-    <div class="carousel-COMPONENT__pagination"></div>
-    
-    <div class="carousel-COMPONENT__prev"></div>
-    <div class="carousel-COMPONENT__next"></div>
-    
-    <div class="carousel-COMPONENT__scrollbar"></div>
-
+		<div class="carousel-COMPONENT__frame">
+				<ul class="carousel-COMPONENT__slides">
+						<li class="carousel-COMPONENT__slide">
+							<h2 class="carousel-COMPONENT__title">
+								Slide 1
+							</h2>
+							<p class="carousel-COMPONENT__text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							</p>
+						</li>
+				</ul>
+		</div>
+		<span class="carousel-COMPONENT__prev">
+				&lsaquo;
+		</span>
+		<span class="carousel-COMPONENT__next">
+				&rsaquo;
+		</span>
+		<div class="class_pagination"></div>
 </div>

@@ -2,8 +2,8 @@
 
 	!COMPONENT! CAROUSEL
 
-	Using Swiper (http://idangero.us/swiper/api/)
-	$ npm install swiper
+	Using Lory.js (http://meandmax.github.io/lory/)
+	$ npm install lory.js
 
 */
 
@@ -12,28 +12,13 @@
 	// Elements
 	&__{
 
-		&wrapper{
+		&frame{
+		}
+
+		&slides{
 		}
 
 		&slide{
-
-			&--{
-
-				&active{
-				}
-
-				&visible{
-				}
-
-				&duplicate{
-				}
-
-				&next{
-				}
-
-				&prev{
-				}
-			}
 		}
 
 		&title{
@@ -42,28 +27,10 @@
 		&text{
 		}
 
-		&nav{
-
-			&--{
-
-				&next{
-				}
-
-				&prev{
-				}
-
-				&disabled{
-				}
-			}
-		}
-
-		&scrollbar{
-		}
-
 		&pagination{
 		}
 
-		&bullet{
+		&dot{
 
 			&--{
 
