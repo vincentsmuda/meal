@@ -1,5 +1,5 @@
 #Meal
-A component file generator that creates scss, js, and markup upon command.
+A customizable scaffolding CLI tool.
 
 ```
 $ meal make news card
