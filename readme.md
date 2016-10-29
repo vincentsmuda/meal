@@ -41,17 +41,13 @@ __Speedy:__
 Generate the boilerplate you need to get started in an instant. By keeping your files abstract and modular, you no longer have to worry about adding weight to a project by including an entire framework.
 
 __Organized:__
-Meal keeps your uncompiled files neatly named and organized within your source folder. Say hello to the simple yet effective "[component-type]-[component-name]" naming convention. Now your component directory will look something like this:
+Meal keeps your uncompiled files neatly named and organized within your source folder. Say hello to the simple yet effective "[component-type]-[component-name]" naming convention.
 
 ```
-Before:              After:
-/newsitem.html       /card-news.html
-/productcard.html    /card-product.html
-/blogpost.html       /card-blog.html
-/newsPost.html       /article-news.html
-/single-blog.html    /article-blog.html
-/product.html        /article-product.html
-...
+Source:                After:                 Or After (components_as_dirs enabled)
+/ingredient.html       /card-news.html        /cards/news.html
+/ingredient.scss       /_card-news.scss       /cards/_news.scss
+/ingredient.js         /_card-news.js         /cards/_news.js
 ``` 
 
 ##meal.json
