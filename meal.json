@@ -3,11 +3,13 @@
 		{
 			"type": "html",
 			"components_as_dirs": true,
+			"component_as_dir": true,
 			"path": "/resources/html/"
 		},
 		{
 			"type": "scss",
 			"components_as_dirs": true,
+			"component_as_dir": true,
 			"path": "/resources/scss/",
 			"prefix": "_",
 			"import": {
@@ -18,6 +20,7 @@
 		{
 			"type": "js",
 			"components_as_dirs": true,
+			"component_as_dir": true,
 			"path": "/resources/js/",
 			"prefix": "_"
 		}

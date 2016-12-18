@@ -2,16 +2,25 @@
  *
  * 	Create File
  * 	Creates a file in a specified directory
- *  
+ *
  * 	@param {Object} type The filetype being created {type,name,path,prefix}
- * 	
+ *
  */
 
 module.exports = function(type) {
+
+	// if(!!type.components_as_dirs && !type.component_as_dir)
+		// type.components_as_dirs = false;
+	// else if(!!type.component_as_dir && !type.components_as_dirs)
+		// type.component_as_dir = false;
+
 	var options = this.args.make,
 		contents = '',
-		filename = (!!type.prefix ? type.prefix : '') + (!!type.components_as_dirs ? '' : options[1] + '-') + options[0] + '.' + (!!type.output_type ? type.output_type : type.type);
-	
+		filename = (!!type.prefix ? type.prefix : '') +
+							 (!!type.components_as_dirs ? '' : options[1] + '-') +
+							 options[0] + '.' +
+							 (!!type.output_type ? type.output_type : type.type);
+
 	this.file_read(this.user_options.components_dir + '/' + options[1] + '/ingredient.' + type.type)
 		.then(response => {
 			var data = response.data,
@@ -23,6 +32,10 @@ module.exports = function(type) {
 			var dirs = type.path ? type.path : 'resources/' + type.type + '/components';
 
 			if(!!type.components_as_dirs) dirs += '/' + this.pluralize(options[1]) + '/';
+
+			if(!!type.component_as_dir) dirs += '/' +
+				(!type.components_as_dirs ? options[1] + '-' : '') +
+				options[0] + '/';
 
 			// UPPERCASE, Capitalize, lowercase
 			contents = data.replace(/!COMPONENT!/g, options[0].toUpperCase())
