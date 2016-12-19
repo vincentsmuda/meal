@@ -2,14 +2,14 @@
 	"ingredients": [
 		{
 			"type": "html",
+			"component_types_as_dirs": true,
 			"components_as_dirs": true,
-			"component_as_dir": true,
 			"path": "/resources/html/"
 		},
 		{
 			"type": "scss",
+			"component_types_as_dirs": true,
 			"components_as_dirs": true,
-			"component_as_dir": true,
 			"path": "/resources/scss/",
 			"prefix": "_",
 			"import": {
@@ -19,8 +19,8 @@
 		},
 		{
 			"type": "js",
+			"component_types_as_dirs": true,
 			"components_as_dirs": true,
-			"component_as_dir": true,
 			"path": "/resources/js/",
 			"prefix": "_"
 		}

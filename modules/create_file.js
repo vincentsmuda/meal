@@ -9,15 +9,15 @@
 
 module.exports = function(type) {
 
-	// if(!!type.components_as_dirs && !type.component_as_dir)
+	// if(!!type.component_types_as_dirs && !type.components_as_dirs)
+		// type.component_types_as_dirs = false;
+	// else if(!!type.components_as_dirs && !type.component_types_as_dirs)
 		// type.components_as_dirs = false;
-	// else if(!!type.component_as_dir && !type.components_as_dirs)
-		// type.component_as_dir = false;
 
 	var options = this.args.make,
 		contents = '',
 		filename = (!!type.prefix ? type.prefix : '') +
-							 (!!type.components_as_dirs ? '' : options[1] + '-') +
+							 (!!type.component_types_as_dirs ? '' : options[1] + '-') +
 							 options[0] + '.' +
 							 (!!type.output_type ? type.output_type : type.type);
 
@@ -31,10 +31,10 @@ module.exports = function(type) {
 
 			var dirs = type.path ? type.path : 'resources/' + type.type + '/components';
 
-			if(!!type.components_as_dirs) dirs += '/' + this.pluralize(options[1]) + '/';
+			if(!!type.component_types_as_dirs) dirs += '/' + this.pluralize(options[1]) + '/';
 
-			if(!!type.component_as_dir) dirs += '/' +
-				(!type.components_as_dirs ? options[1] + '-' : '') +
+			if(!!type.components_as_dirs) dirs += '/' +
+				(!type.component_types_as_dirs ? options[1] + '-' : '') +
 				options[0] + '/';
 
 			// UPPERCASE, Capitalize, lowercase

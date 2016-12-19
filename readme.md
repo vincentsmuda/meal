@@ -46,7 +46,7 @@ Meal keeps your uncompiled files neatly named and organized within your source f
 ```
 $meal make news card
 
-Source:                    After:                Or After (components_as_dirs enabled)
+Source:                    After:                Or After (component_types_as_dirs enabled)
 card/ingredient.html       card-news.html        cards/news.html
 card/ingredient.scss       _card-news.scss       cards/_news.scss
 card/ingredient.js         _card-news.js         cards/_news.js
@@ -61,14 +61,14 @@ After installation, you can specify the meal options:
 		{
 			"type": "html",
 			"output_type": "html",
-			"components_as_dirs": true,
+			"component_types_as_dirs": true,
 			"path": "/resources/markup/html/components",
 			"prefix": ""
 		},
 		{
 			"type": "scss",
 			"output_type": "scss",
-			"components_as_dirs": true,
+			"component_types_as_dirs": true,
 			"path": "/resources/styles/scss/components",
 			"import": {
 				"name": "style.scss",
@@ -79,7 +79,7 @@ After installation, you can specify the meal options:
 		{
 			"type": "js",
 			"output_type": "js",
-			"components_as_dirs": true,
+			"component_types_as_dirs": true,
 			"path": "/resources/scripts/js/components",
 			"prefix": "_"
 		}
@@ -96,7 +96,7 @@ type | The type of the source file's template | ingredient.__html__
 output_type | The filetype that the source will compile to | ingredient.html -> card-name.__php__
 path | The path to the output folder | /public/includes
 prefix | The file's prefix | **_**markup.html
-components_as_dirs | whether to output into separate directories or not | false -> ../__card__-name.php, true -> ../__card__/name.php
+component_types_as_dirs | whether to output into separate directories or not | false -> ../__card__-name.php, true -> ../__card__/name.php
 import.name | the name of the scss importing file | style.scss
 import.path | the path to the importing file | /resources/assets/scss/
 

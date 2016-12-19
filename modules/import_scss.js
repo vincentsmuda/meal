@@ -46,12 +46,12 @@ module.exports = function(type) {
 	import_string = '@import \"' +
 		inclu_path +
 		(
-			!!type.components_as_dirs ?
+			!!type.component_types_as_dirs ?
 			this.pluralize(options[1]) + '/' :
 			options[1] + '-'
 		) +
 		(
-			!!type.component_as_dir ?
+			!!type.components_as_dirs ?
 			options[0] + '/' :
 			''
 		) +
