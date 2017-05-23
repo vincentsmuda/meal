@@ -55,7 +55,7 @@ module.exports = function(type) {
 			        console.log('Some other error: ', err.code);
 			    }
 			});
-			if(type.type == 'scss') this.importScss(type);
+			if(type.type == 'scss' && !!type.import) this.importScss(type);
 		})
 		.then(null,console.log);
 
