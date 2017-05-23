@@ -1,4 +1,4 @@
-#Meal
+# Meal
 A customizable scaffolding CLI tool.
 
 ```
@@ -16,13 +16,13 @@ html -
 scss -
 	.card-COMPONTENT... ->
 	.card-news...
-js   - 
+js   -
 	getElementByClassName('card-COMPONTENT')... ->
 	getElementByClassName('card-news')...
 
 ```
 
-##Installation
+## Installation
 
 first install it globally
 
@@ -32,7 +32,7 @@ Then call init in your project folder to generate the meal.json
 
 `$ meal init`
 
-##Why
+## Why
 
 __Consistent:__
 By using consistent templates you can increase quality, enforce patterns and methodologies, add complexity, and maintain best practices.
@@ -50,9 +50,9 @@ Source:                    After:                Or After (component_types_as_di
 card/ingredient.html       card-news.html        cards/news.html
 card/ingredient.scss       _card-news.scss       cards/_news.scss
 card/ingredient.js         _card-news.js         cards/_news.js
-``` 
+```
 
-##meal.json
+## meal.json
 After installation, you can specify the meal options:
 
 ```json
@@ -88,7 +88,7 @@ After installation, you can specify the meal options:
 }
 ```
 
-###ingredients
+### ingredients
 
 Property | Description | Example
 --- | --- | ---
@@ -100,10 +100,10 @@ component_types_as_dirs | whether to output into separate directories or not | f
 import.name | the name of the scss importing file | style.scss
 import.path | the path to the importing file | /resources/assets/scss/
 
-###components_dir
+### components_dir
 Spcifying the components directory will tell meal where to look for the template files.
 
-##Commands
+## Commands
 
 Command | Description | Example
 --- | --- | ---
@@ -111,13 +111,13 @@ init | Creates a meal.json in your current directory | meal init
 list | Lists all generatable components | meal list
 make __[NAME] [TYPE]__ | generates files from the __[TYPE]__ template using the __[NAME]__ | meal make news card
 
-###Make options
+### Make options
 
 Option | Description | Example
 --- | --- | ---
 --x__[TYPE]__ | Skips the __[TYPE]__ file generation | meal make some card --xjs --xscss (Will skip the scss and js files)
 
-##Template Files
+## Template Files
 
 By default there are template files bundled with meal, however it is understandable that you may like to create your own... ingredients...
 
@@ -147,7 +147,7 @@ Next it will replace all occurences of __COMPONENT__ with __news__
 
 ```
 
-###Component Naming Casing
+### Component Naming Casing
 
 The current casing control that meal allows when writing your template files is as follows:
 
