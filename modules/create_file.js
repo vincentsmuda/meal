@@ -16,6 +16,7 @@ module.exports = function(type) {
 
 	var options = this.args.make,
 		contents = '',
+		exists = true,
 		filename = (!!type.prefix ? type.prefix : '') +
 							 (!!type.component_types_as_dirs ? '' : options[1] + '-') +
 							 options[0] + '.' +
@@ -26,8 +27,10 @@ module.exports = function(type) {
 			var data = response.data,
 				err = response.err;
 
-			if(err !== null && err.code === 'ENOENT')
+			if(err !== null && err.code === 'ENOENT') {
+				exists = false;
 				return console.log(this.colors.getColor('red'),'\n  the ' + type.type + ' file for the ' + options[1] + ' component does not exist.\n  Looking -> ' + this.user_options.components_dir + '/' + options[1] + '/ingredient.' + type.type + '\n',this.colors.getColor('default'));
+			}
 
 			var dirs = type.path ? type.path : 'resources/' + type.type + '/components';
 
@@ -55,7 +58,7 @@ module.exports = function(type) {
 			        console.log('Some other error: ', err.code);
 			    }
 			});
-			if(type.type == 'scss' && !!type.import) this.importScss(type);
+			if(exists && type.type == 'scss' && !!type.import) this.importScss(type);
 		})
 		.then(null,console.log);
 
