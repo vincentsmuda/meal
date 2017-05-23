@@ -63,12 +63,12 @@ module.exports = function(type) {
 		if(err === null) {
 	    	this.fs.readFile(style_path, 'utf8', (err,data) => {
 	    		if(data.indexOf(import_string) < 0)
-		    		this.fs.writeFile(style_path, '\n' + data.trim() + import_string_formatted);
+		    		this.fs.writeFile(style_path, '\n' + data.trim() + import_string_formatted, () => {});
 	    	});
     }else if(err.code == 'ENOENT') {
 			this.createDirs(type.import.path)
 				.then(dir => {
-					this.fs.writeFile(style_path, '\n/*\n *\n *\tMEAL IMPORTS (LEAVE AT BOTTOM)\n *\n */\n' + import_string_formatted);
+					this.fs.writeFile(style_path, '\n/*\n *\n *\tMEAL IMPORTS (LEAVE AT BOTTOM)\n *\n */\n' + import_string_formatted, () => {});
 				});
     }
 	});

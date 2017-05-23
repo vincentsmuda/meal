@@ -50,7 +50,7 @@ module.exports = function(type) {
 				if(err === null) {
 					// do nothing
 			    }else if(err.code == 'ENOENT') {
-			        this.fs.writeFile(filepath, contents);
+			        this.fs.writeFile(filepath, contents, () => {});
 			    } else {
 			        console.log('Some other error: ', err.code);
 			    }
